@@ -1,5 +1,5 @@
 package ar.utn.dds;
 
 public enum TipoPrenda {
- CAMISA,PANTALON,SACO;
+	CAMISA, PANTALON, SACO;
 }
