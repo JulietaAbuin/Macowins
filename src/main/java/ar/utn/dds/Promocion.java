@@ -1,6 +1,6 @@
 package ar.utn.dds;
 
-public class Promocion {
+public class Promocion implements Estado {
 	private float descuento;
 
 	public Promocion(float descuento) {
