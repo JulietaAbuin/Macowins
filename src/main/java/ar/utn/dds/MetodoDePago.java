@@ -1,5 +1,5 @@
 package ar.utn.dds;
 
-public class MetodoDePago {
-
+public interface MetodoDePago {
+	public float calcular(float importeParcial);
 }

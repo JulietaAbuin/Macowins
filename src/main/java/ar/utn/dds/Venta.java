@@ -1,15 +1,25 @@
 package ar.utn.dds;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
+
 public class Venta {
-	List<Prenda> listaPrendas = new ArrayList<Prenda>();
+	MetodoDePago formadepago;
+	List<Item> listaItems = new ArrayList<Item>();
+	private Date fecha = new Date();
+	
 	Venta(MetodoDePago pago) {
 		this.formadepago = pago;
 	}
 
-	MetodoDePago formadepago;
-
-	float precioVentaFinal() {
-		return 2;
+	Date getFecha() {
+		return this.fecha;
+	}
+	float importeParcial() {
+		return (float)listaItems.stream().mapToDouble(item ->item.importe()).sum();
+	}
+	
+	float importeTotal() {
+		return formadepago.calcular(this.importeParcial());
 	}
 }
